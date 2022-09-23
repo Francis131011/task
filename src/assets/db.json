@@ -1,0 +1,13 @@
+{
+  "ClientList": [
+    {
+      "clientName": "Sagar Dharmshetti",
+      "clientDomain": "Banking....",
+      "clientGender": "Male",
+      "clientDOB": "1997-06-26T18:30:00.000Z",
+      "clientContact": "7743866501",
+      "clientLocation": "Latur",
+      "id": 1
+    }
+  ]
+}

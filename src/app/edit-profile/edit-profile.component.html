@@ -1,0 +1,41 @@
+<h2 mat-dialog-title [align]="'center'">Edit Profile</h2>
+<div mat-dialog-content>
+    <form [formGroup]="profileForm">
+        <mat-form-field appearance="outline">
+            <mat-label>Name</mat-label>
+            <input matInput type="text" formControlName="clientName">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Domain</mat-label>
+            <input matInput type="text" formControlName="clientDomain">
+        </mat-form-field>
+        <mat-label>
+            <h3>Select Gender</h3>
+        </mat-label>
+        <mat-radio-group formControlName="clientGender">
+            <mat-radio-button *ngFor="let gender of genders" [value]="gender">
+                {{gender}}
+            </mat-radio-button>
+        </mat-radio-group>
+        <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Date of Birth</mat-label>
+            <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" formControlName="clientDOB">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Mobile Number</mat-label>
+            <input matInput type="text" formControlName="clientContact">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Location</mat-label>
+            <textarea matInput formControlName="clientLocation"></textarea>
+        </mat-form-field>
+    </form>
+</div>
+
+<div mat-dialog-actions [align]="'end'">
+    <button mat-button mat-raised-button color="warn" mat-dialog-close> Close </button>
+    <button mat-button mat-raised-button color="primary" (click)="updateClientData()">{{actionbtn}}</button>
+</div>
+
